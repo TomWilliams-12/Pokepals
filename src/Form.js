@@ -5,18 +5,25 @@ var Pokedex = require("pokedex-promise-v2");
 var MyPokedex = new Pokedex();
 
 const Form = () => {
+  let pokemon = {};
+
+  function getPokemon(pokemonInput) {
+    MyPokedex.getPokemonByName(pokemonInput) // with Promise
+      .then(function (response) {
+        pokemon = response;
+        console.log(pokemon);
+      })
+      .catch(function (error) {
+        console.log("There was an ERROR: ", error);
+      });
+  }
+
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
         let pokemon = document.getElementById("pokemonInput").value;
-        MyPokedex.getPokemonByName(pokemon) // with Promise
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log("There was an ERROR: ", error);
-          });
+        getPokemon(pokemon);
       }}
     >
       <label htmlFor="pokemonInput">
