@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "@reach/router";
 
-export default function Pokemon({ id, name, type, moves, image }) {
+export default function Pokemon({ pokemon }) {
   return (
     <div className="pokemon-container">
       <div className="image-container">
-        <img src={image} alt={name} />
+        <img src={pokemon.image} alt={pokemon.name} />
       </div>
       <div className="info">
         <h1>
-          {id} : {name}
+          {pokemon.id} : {pokemon.name}
         </h1>
       </div>
     </div>

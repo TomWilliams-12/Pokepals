@@ -11,9 +11,7 @@ const App = () => {
         <h1>Welcome To Pokepals</h1>
       </Link>
       <h2>All the pokemon information you need!</h2>
-      <Router>
-        <Form path="/" />
-      </Router>
+      <Form />
     </header>
   );
 };
