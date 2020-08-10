@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Pokemon from "./Pokemon";
 
 const Results = ({ pokemon }) => {
@@ -7,9 +7,9 @@ const Results = ({ pokemon }) => {
       <Pokemon
         name={pokemon.name}
         id={pokemon.id}
-        type={pokemon.types.type.name}
-        moves={pokemon.moves}
-        image={pokemon.sprites.front_default}
+        // type={pokemon.types.type.name}
+        // moves={pokemon.moves}
+        // image={pokemon.sprites.front_default}
       />
     </div>
   );
