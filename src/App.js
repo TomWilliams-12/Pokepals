@@ -8,8 +8,8 @@ import "./style.css";
 const App = () => {
   return (
     <div className="container">
-      <h1>Welcome To Pokepals</h1>
-      <h2>All the pokemon information you need!</h2>
+      <h1 className="title">Welcome To Pokepals</h1>
+      <h2 className="tagline">All the pokemon information you need!</h2>
       <Form />
     </div>
   );

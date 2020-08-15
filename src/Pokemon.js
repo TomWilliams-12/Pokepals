@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 
 export default function Pokemon({ pokemon }) {
   return pokemon.length === 0 ? (
-    <h1>Do your search</h1>
+    <h1></h1>
   ) : (
     <div className="pokemon-container">
       <div className="image-container">
