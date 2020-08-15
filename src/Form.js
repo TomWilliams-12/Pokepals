@@ -7,7 +7,7 @@ import { render } from "react-dom";
 var Pokedex = require("pokedex-promise-v2");
 var MyPokedex = new Pokedex();
 
-const Form = (props) => {
+const Form = () => {
   const [pokemon, setPokemon] = useState([]);
   const [search, setSearch] = useState("");
 
