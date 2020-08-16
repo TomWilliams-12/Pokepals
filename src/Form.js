@@ -27,23 +27,46 @@ const Form = () => {
     }
   };
 
+  const randomPokemon = () => {
+    const randomNumber = Math.floor(Math.random() * 807);
+    MyPokedex.getPokemonByName(randomNumber)
+      .then((response) => {
+        setPokemon(response);
+      })
+      .catch((error) => {
+        console.log("There was an ERROR", error);
+      });
+  };
+
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        fetchPokemon();
-      }}
-    >
-      <label htmlFor="pokemonInput">
-        <input
-          onChange={(e) => setSearch(e.target.value)}
-          id="pokemonInput"
-          placeholder="Type in your Pokemon"
-        />
-      </label>
-      <input type="submit" value="Submit" />
+    <div className="form-container">
+      <form
+        className="form-search"
+        onSubmit={(e) => {
+          e.preventDefault();
+          fetchPokemon();
+        }}
+      >
+        <label htmlFor="pokemonInput">
+          <input
+            onChange={(e) => setSearch(e.target.value)}
+            id="pokemonInput"
+            placeholder="Type in your Pokemon"
+          />
+        </label>
+        <input type="submit" value="I Choose..." />
+      </form>
+      <form
+        className="form-random"
+        onSubmit={(e) => {
+          e.preventDefault();
+          randomPokemon();
+        }}
+      >
+        <input type="submit" value="You Choose..." />
+      </form>
       <Pokemon pokemon={pokemon} />
-    </form>
+    </div>
   );
 };
 
