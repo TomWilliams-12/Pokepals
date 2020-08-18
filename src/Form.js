@@ -54,7 +54,7 @@ const Form = () => {
             placeholder="Type in your Pokemon"
           />
         </label>
-        <input type="submit" value="I Choose..." />
+        <input type="submit" value="I Choose..." className="btn" />
       </form>
       <form
         className="form-random"
@@ -63,7 +63,7 @@ const Form = () => {
           randomPokemon();
         }}
       >
-        <input type="submit" value="You Choose..." />
+        <input type="submit" value="You Choose..." className="btn" />
       </form>
       <Pokemon pokemon={pokemon} />
     </div>
